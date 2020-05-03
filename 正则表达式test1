@@ -1,0 +1,23 @@
+import re
+def test():  #####定义函数后面要加冒号
+
+
+    a=re.search(r'[a-z]+', 'liuyaN1234ab9',re.I).group()
+    a1 = re.search(r'[a-z]+', 'liuyaN1234ab9').group()
+    b=re.findall(r'[a-z]+', 'liuyaN1234ab9')
+    c=re.match(r'[a-z]+', 'liuyaN1234ab9').group()
+    d = re.match(r'[a-z]+', 'liuyaN1234ab9', re.I).group()
+    print(a)
+    print(b)
+    print(c)
+    print(a,a1,b,c,d)
+
+    string = "123abc456"
+
+    print(re.search("([0-9]*)([a-z]*)([0-9]*)", string).group(0))     # 123abc456,返回整体
+    print(re.search("([0-9]*)([a-z]*)([0-9]*)", string).group(1))     #123
+    print(re.search("([0-9]*)([a-z]*)([0-9]*)", string).group(2))     #abc
+    print(re.search("([0-9]*)([a-z]*)([0-9]*)", string).group(3))     #456
+
+if __name__ == '__main__':  #####函数后面要加冒号
+    test()
