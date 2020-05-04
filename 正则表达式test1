@@ -2,15 +2,17 @@ import re
 def test():  #####定义函数后面要加冒号
 
 
-    a=re.search(r'[a-z]+', 'liuyaN1234ab9',re.I).group()
+    a = re.search(r'[a-z]+', 'liuyaN1234ab9', re.I).group()
     a1 = re.search(r'[a-z]+', 'liuyaN1234ab9').group()
     b=re.findall(r'[a-z]+', 'liuyaN1234ab9')
     c=re.match(r'[a-z]+', 'liuyaN1234ab9').group()
     d = re.match(r'[a-z]+', 'liuyaN1234ab9', re.I).group()
+    e=re.findall(r'[a-z]+', 'liuyaN1234ab9', re.I)
     print(a)
     print(b)
     print(c)
     print(a,a1,b,c,d)
+    print(e)
 
     string = "123abc456"
 
@@ -18,6 +20,16 @@ def test():  #####定义函数后面要加冒号
     print(re.search("([0-9]*)([a-z]*)([0-9]*)", string).group(1))     #123
     print(re.search("([0-9]*)([a-z]*)([0-9]*)", string).group(2))     #abc
     print(re.search("([0-9]*)([a-z]*)([0-9]*)", string).group(3))     #456
+    if re.match(r'[0-9]','a'):
+        print(a)
+    else:
+        print(b)
+    str1 = '<table><td><th>贪婪</th><th>贪婪</th><th>贪婪</th></td></table>贪婪'
+    str2 = re.findall(r'<.*>', str1)
+    str3 = re.findall(r'<.*?>', str1)
+    print(str2,str3)
+
 
 if __name__ == '__main__':  #####函数后面要加冒号
     test()
+
