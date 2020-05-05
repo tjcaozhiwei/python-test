@@ -1,9 +1,9 @@
 import re
 def test():  #####定义函数后面要加冒号
 
-    str = 'aabhhacbccd\nacbccd\na\nbbdffbgg'
+    str = 'aaaaabhhacbccd\nacbccd\na\nbbdffbgg'
     # 一个'.'就是匹配\n(换行符)以外的任何字符
-    print(re.findall(r'a.b', str))
+    print(re.findall(r'a{2}.b', str))
 
     # 一个'*'前面的字符出现0次或以上
     print(re.findall(r'a*b', str))
