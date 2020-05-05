@@ -1,0 +1,28 @@
+import re
+def test():  #####定义函数后面要加冒号
+
+    str = 'aabhhacbccd\nacbccd\na\nbbdffbgg'
+    # 一个'.'就是匹配\n(换行符)以外的任何字符
+    print(re.findall(r'a.b', str))
+
+    # 一个'*'前面的字符出现0次或以上
+    print(re.findall(r'a*b', str))
+
+    # 贪婪，匹配从.*前面为开始到后面为结束的所有内容。
+    print(re.findall(r'a.*b', str))
+
+    # 非贪婪，遇到开始和结束就截取，因此截取多次符合的结果，中间没有字符也会被截取 ？？？
+    print(re.findall(r'a.*?b', str))
+
+    # 非贪婪，与上面是一样的，只是与上面相比，多了一个括号，只保留括号中的内容
+    print(re.findall(r'a(.*?)b', str))
+
+    # re.S不会对\n进行中断
+    print(re.findall(r'a(.*?)b', str, re.S))
+
+    # 保留a,b中间的内容
+    print(re.findall(r'a(.+?)b', str))
+    print(re.findall(r'a(.+?)b', str)[0])
+
+if __name__ == '__main__':  #####函数后面要加冒号
+    test()
